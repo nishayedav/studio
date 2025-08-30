@@ -11,7 +11,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex items-center space-x-2">
             <Cloud className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline text-lg text-foreground">Nisha's Cloud Canvas</span>
+            <span className="font-bold font-headline text-lg text-foreground">Tech with Neesha</span>
           </div>
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} Nisha Yadav. All Rights Reserved.

@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster"
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Nisha's Cloud Canvas",
+  title: "Tech with Neesha",
   description: "Personal portfolio for Ms. Nisha Yadav, a Cloud Engineer and IT Professional from Kathmandu, Nepal.",
   keywords: "Nisha Yadav, Cloud Engineer, IT Professional, Kathmandu, Nepal, Portfolio, AWS, Azure, GCP, DevOps",
 };

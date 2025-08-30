@@ -1,7 +1,6 @@
 'use client'
 
-import { useEffect } from 'react';
-import { useFormState } from 'react-dom';
+import { useEffect, useActionState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -21,12 +20,12 @@ const contactSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast();
-  const [state, formAction] = useFormState<ContactFormState, FormData>(submitContactForm, {
+  const [state, formAction, isPending] = useActionState<ContactFormState, FormData>(submitContactForm, {
     message: "",
     success: false,
   });
 
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     resolver: zodResolver(contactSchema),
     defaultValues: { name: "", email: "", message: "" },
   });
@@ -97,8 +96,8 @@ export function ContactForm() {
             />
             {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
           </div>
-          <Button type="submit" className="w-full" disabled={isSubmitting}>
-             {isSubmitting ? (
+          <Button type="submit" className="w-full" disabled={isPending}>
+             {isPending ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Sending...

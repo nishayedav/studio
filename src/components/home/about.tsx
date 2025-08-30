@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { skills } from '@/lib/data';
+import { Download } from 'lucide-react';
 
 export function About() {
   return (
@@ -31,7 +34,15 @@ export function About() {
               </p>
             </div>
             <div className="mt-8">
-              <h3 className="text-2xl font-semibold font-headline mb-4">My Skills & Expertise</h3>
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-2xl font-semibold font-headline">My Skills & Expertise</h3>
+                <Button asChild variant="outline">
+                  <Link href="/Nisha_Yadav_CV.pdf" download="Nisha_Yadav_CV.pdf">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download CV
+                  </Link>
+                </Button>
+              </div>
               <div className="flex flex-wrap gap-3">
                 {skills.map((skill) => (
                   <Badge key={skill.name} variant="secondary" className="text-sm py-2 px-4 bg-accent border-primary/20 text-foreground/80">

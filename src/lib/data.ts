@@ -14,7 +14,7 @@ export const skills = [
 export const services = [
   {
     icon: CloudCog,
-    title: 'Cloud Architecture & Strategy',
+    title: 'Cloud Architecture',
     description: 'Designing scalable, secure, and cost-effective cloud infrastructures tailored to your business needs.',
   },
   {
@@ -24,7 +24,7 @@ export const services = [
   },
   {
     icon: ShieldCheck,
-    title: 'Security & Compliance',
+    title: 'IAM Security & Compliance',
     description: 'Ensuring your cloud environment adheres to industry best practices and compliance standards.',
   },
 ];

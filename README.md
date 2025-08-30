@@ -1,4 +1,4 @@
-# Tech with Neesha - Personal Portfolio
+# Tech with Neesha - Personal Portfolio's
 
 This is the personal portfolio website for Nisha Yadav, a Cloud Engineer and IT Professional based in Kathmandu, Nepal. The site is designed to showcase her skills, services, and professional insights through a clean, modern interface. It was built using Firebase Studio.
 

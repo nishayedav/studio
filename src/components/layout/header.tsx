@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { Menu, Cloud } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 
 const navLinks = [
   { href: '#home', label: 'Home' },
@@ -40,15 +40,16 @@ export function Header() {
                 <span className="sr-only">Open Menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="bg-background">
-              <div className="flex flex-col h-full">
-                <div className="p-6 border-b">
-                    <Link href="#home" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
-                      <Cloud className="h-6 w-6 text-primary" />
-                      <span className="font-bold font-headline text-lg">Tech with Neesha</span>
-                    </Link>
-                </div>
-                <nav className="flex flex-col space-y-4 p-6 flex-1">
+            <SheetContent side="left" className="bg-background p-0">
+                <SheetHeader className="p-6 border-b">
+                    <SheetTitle>
+                        <Link href="#home" className="flex items-center space-x-2" onClick={() => setIsOpen(false)}>
+                            <Cloud className="h-6 w-6 text-primary" />
+                            <span className="font-bold font-headline text-lg">Tech with Neesha</span>
+                        </Link>
+                    </SheetTitle>
+                </SheetHeader>
+                <nav className="flex flex-col space-y-4 p-6">
                   {navLinks.map((link) => (
                     <Link
                       key={link.label}
@@ -60,7 +61,6 @@ export function Header() {
                     </Link>
                   ))}
                 </nav>
-              </div>
             </SheetContent>
           </Sheet>
         </div>
